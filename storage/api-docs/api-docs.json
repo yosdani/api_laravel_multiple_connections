@@ -1,0 +1,240 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "KPI ETI Documentación API",
+        "description": "Endpoints de la app KPI ETI",
+        "contact": {
+            "email": "ciudadana@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://my-default-host.com",
+            "description": "Endpoints de la app KPI ETI"
+        }
+    ],
+    "paths": {
+        "/authenticate": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login user",
+                "description": "Login the user",
+                "operationId": "6228675d822707f39f797a080f313585",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "description": "Email of user",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "description": "Password of user",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Email or password incorrect"
+                    }
+                }
+            }
+        },
+        "indicadores/facturacion-almacen": {
+            "get": {
+                "tags": [
+                    " Importe mensual por almacenes"
+                ],
+                "summary": "  Importe mensual por almacenes",
+                "description": "Retorna los Importes mensuales por almacenes ",
+                "operationId": "2c8f4e6f9e2aac37d17591b8b46d8097",
+                "responses": {
+                    "200": {
+                        "description": "Listado de los Importes mensuales por almacenes",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                }
+            }
+        },
+        "indicadores/facturacion-servicio": {
+            "get": {
+                "tags": [
+                    " Importe acumulado por servicios"
+                ],
+                "summary": "  Importe acumulado por servicios",
+                "description": "Retorna los Importes acumulados por servicios ",
+                "operationId": "1fdb227e7db38ca5ee21756399e5c4ca",
+                "responses": {
+                    "200": {
+                        "description": "Listado de los Importes acumulados por servicios",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                }
+            }
+        },
+        "indicadores/ventas": {
+            "get": {
+                "tags": [
+                    "Ventas"
+                ],
+                "summary": "Lista de Ventas",
+                "description": "Retorna las ventas ",
+                "operationId": "9aa6aa1891e4134e7dc30f67c287e6da",
+                "responses": {
+                    "200": {
+                        "description": "Listado de las ventas",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                }
+            }
+        },
+        "indicadores/gastos": {
+            "get": {
+                "tags": [
+                    "Gastos"
+                ],
+                "summary": " Gastos",
+                "description": "Retorna los Gastos ",
+                "operationId": "c23affde901f36452fcd85575e2f1695",
+                "responses": {
+                    "200": {
+                        "description": "Listado de los Gastos",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                }
+            }
+        },
+        "indicadores/gastostrimestrales": {
+            "get": {
+                "tags": [
+                    "Gastos Trimestrales"
+                ],
+                "summary": " Gastos Trimestrales",
+                "description": "Retorna los Gastos por trimestre ",
+                "operationId": "42cabb1eee70e8b22c85fcfcfde1e176",
+                "responses": {
+                    "200": {
+                        "description": "Listado de los Gastos por Trimestre",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                }
+            }
+        },
+        "personal/trabajadores": {
+            "get": {
+                "tags": [
+                    " Trabajadores"
+                ],
+                "summary": "  cantidad de trabajadores activos en la entidad",
+                "description": "Retorna la cantidad de trabajadores ",
+                "operationId": "3708118d27fe663d0e585a2ea6add8af",
+                "responses": {
+                    "200": {
+                        "description": "La cantidad de trabajadores activos",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "summary": "Mostrar usuarios",
+                "operationId": "c457726701591d1183b53aa71fc13441",
+                "responses": {
+                    "200": {
+                        "description": "Mostrar todos los usuarios."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "KPI ETI",
+            "description": "Endpoints de la app KPI ETI"
+        }
+    ]
+}
