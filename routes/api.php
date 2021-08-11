@@ -51,10 +51,10 @@ Route::group(['prefix' => 'v1'],function () {
 
 
 
-        Route::get('indicadores/ventas', 'IndicatorsController@getVentas');
-        Route::get('indicadores/gastos', 'IndicatorsController@getGastos');
-        Route::get('indicadores/ingresos', 'IndicatorsController@getIngresos');
-        Route::get('indicadores/utilidades', 'IndicatorsController@getUtilidades');
+        Route::get('indicadores/ventas/{entidad}', 'IndicatorsController@getVentas');
+        Route::get('indicadores/gastos/{entidad}', 'IndicatorsController@getGastos');
+        Route::get('indicadores/ingresos/{entidad}', 'IndicatorsController@getIngresos');
+        Route::get('indicadores/utilidades/{entidad}', 'IndicatorsController@getUtilidades');
 
 
         /**
@@ -62,9 +62,9 @@ Route::group(['prefix' => 'v1'],function () {
          *
          */
 
-        Route::get('indicadores/ventastrimestrales', 'IndicatorsController@getVentasTrimestrales');
-        Route::get('indicadores/gastostrimestrales', 'IndicatorsController@getGastosTrimestrales');
-        Route::get('indicadores/ingresostrimestrales', 'IndicatorsController@getIngresosTrimestrales');
+        Route::get('indicadores/ventastrimestrales/{entidad}', 'IndicatorsController@getVentasTrimestrales');
+        Route::get('indicadores/gastostrimestrales/{entidad}', 'IndicatorsController@getGastosTrimestrales');
+        Route::get('indicadores/ingresostrimestrales/{entidad}', 'IndicatorsController@getIngresosTrimestrales');
 
 
 
