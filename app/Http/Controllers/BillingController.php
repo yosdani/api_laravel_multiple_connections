@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class BillingController extends Controller
 {
-    /*Importe mensual por almacenes*/
+
     /**
      *  Importe mensual por almacenes
      * @OA\Get(
@@ -33,7 +33,6 @@ class BillingController extends Controller
      */
     public function getFacturacionAlmacen()
     {
-
         $result = DB::connection('pgsql')->select("
 			( SELECT 
 M.codalmc AS codalmacen,
@@ -85,7 +84,7 @@ M.codalmc AS codalmacen,
 
 
 
-    /*Consulta Importe acumulado por servicios*/
+
     /**
      *  Importe acumulado por servicios
      * @OA\Get(
